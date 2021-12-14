@@ -48,3 +48,97 @@
 - https://www.regexpal.com
 - https://regexr.com
 - https://regexone.com
+
+### Regex Quiz
+
+```ts
+// \w+
+Match	abcdefg
+Match	abcde
+Match	abc
+
+// \d+
+Match	abc123xyz
+Match	define "123"
+Match	var g = 123;
+
+// [a-zA-Z0-9?=+]+\.
+Match	cat.
+Match	896.
+Match	?=+.
+Skip	abc1
+
+// [c,m,f]an
+Match	can
+Match	man
+Match	fan
+Skip	dan
+Skip	ran
+Skip	pan
+
+// [h,d]og
+Match	hog
+Match	dog
+Skip	bog
+
+// [A-Z]\w+
+Match	Ana
+Match	Bob
+Match	Cpc
+Skip	aax
+Skip	bby
+Skip	ccz
+
+// waz{3,5}up
+Match	wazzzzzup
+Match	wazzzup
+Skip	wazup
+
+// a[a-z]+
+Match	aaaabcc
+Match	aabbbbc
+Match	aacc
+Skip	a
+
+// [0-9]+ files? found\?
+Match	1 file found?
+Match	2 files found?
+Match	24 files found?
+Skip	No files found.
+
+// \s
+Match	1.   abc
+Match	2.	abc
+Match	3.           abc
+Skip	4.abc
+
+// ^Mission: successful
+Match	Mission: successful
+Skip	Last Mission: unsuccessful
+Skip	Next Mission: successful upon capture of target
+
+// ^(file_[a-zA-Z0-9_]+) or ^(file.+)\.pdf$
+Capture	file_record_transcript.pdf	file_record_transcript
+Capture	file_07241999.pdf	file_07241999
+
+// (\w+ (\d+))
+Capture	Jan 1987	Jan 1987 1987
+Capture	May 1969	May 1969 1969
+Capture	Aug 2011	Aug 2011 2011
+
+// (\d+)x(\d+)
+Capture	1280x720	1280 720
+Capture	1920x1600	1920 1600
+Capture	1024x768	1024 768
+
+// I love (cats|dogs)
+Match	I love cats
+Match	I love dogs
+Skip	I love logs
+Skip	I love cogs
+
+// \w+.+ or .*
+Match	The quick brown fox jumps over the lazy dog.
+Match	There were 614 instances of students getting 90.0% or above.
+Match	The FCC had to censor the network for saying &$#*@!.
+```
