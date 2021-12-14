@@ -43,13 +43,13 @@
 | `\s`      | 모든 공백                       |
 | `\S`      | 모든 공백을 제외한 것           |
 
-### Regex site
+### Regex sites
 
 - https://www.regexpal.com
 - https://regexr.com
 - https://regexone.com
 
-### Regex Quiz
+### Regex examples
 
 ```ts
 // \w+
@@ -108,8 +108,8 @@ Skip	No files found.
 
 // \s
 Match	1.   abc
-Match	2.	abc
-Match	3.           abc
+Match	2.	    abc
+Match	3.         abc
 Skip	4.abc
 
 // ^Mission: successful
@@ -119,7 +119,7 @@ Skip	Next Mission: successful upon capture of target
 
 // ^(file_[a-zA-Z0-9_]+) or ^(file.+)\.pdf$
 Capture	file_record_transcript.pdf	file_record_transcript
-Capture	file_07241999.pdf	file_07241999
+Capture	file_07241999.pdf	          file_07241999
 
 // (\w+ (\d+))
 Capture	Jan 1987	Jan 1987 1987
